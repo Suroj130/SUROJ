@@ -1,15 +1,15 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs19
+FROM python:3.12-slim
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git ffmpeg curl unzip && \
+    rm -rf /var/lib/apt/lists/* && \
+    curl -fsSL https://deno.land/install.sh | sh && \
+    ln -s /root/.deno/bin/deno /usr/local/bin/deno
 
-COPY . /app/
-WORKDIR /app/
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -U pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-RUN pip3 install --no-cache-dir --upgrade pip
-
-RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
-
-CMD bash start
+COPY . .
+CMD ["python3", "-m", "AnnieXMedia"]
