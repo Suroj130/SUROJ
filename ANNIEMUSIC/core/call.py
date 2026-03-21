@@ -14,7 +14,7 @@ from pytgcalls.types import AudioQuality, ChatUpdate, MediaStream, StreamEnded, 
 
 import config
 from strings import get_string
-from AnnieXMedia import LOGGER, YouTube, app
+from ANNIEMUSIC import LOGGER, YouTube, app
 from ANNIEMUSIC.misc import db
 from ANNIEMUSIC.utils.database import (
     add_active_chat,
