@@ -6,12 +6,12 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from AnnieXMedia import LOGGER, app, userbot
-from AnnieXMedia.core.call import StreamController
-from AnnieXMedia.misc import sudo
-from AnnieXMedia.plugins import ALL_MODULES
-from AnnieXMedia.utils.database import get_banned_users, get_gbanned
-from AnnieXMedia.utils.cookie_handler import fetch_and_store_cookies
+from ANNIEMUSIC import LOGGER, app, userbot
+from ANNIEMUSIC.core.call import StreamController
+from ANNIEMUSIC.misc import sudo
+from ANNIEMUSIC.plugins import ALL_MODULES
+from ANNIEMUSIC.utils.database import get_banned_users, get_gbanned
+from ANNIEMUSIC.utils.cookie_handler import fetch_and_store_cookies
 from config import BANNED_USERS
 
 
